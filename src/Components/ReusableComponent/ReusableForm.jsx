@@ -23,4 +23,6 @@ const ReusableForm = ({formTitle, handleSubmit, submitBtnTxt='Submit', children}
     );
 };
 
+// propvalidation latter
+
 export default ReusableForm;
