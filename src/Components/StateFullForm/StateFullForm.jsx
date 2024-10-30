@@ -4,10 +4,16 @@ const StateFullForm = () => {
     const [name, setName] = useState(null)
     const [email, setEmail] = useState(null);
     const [password, setPassword]= useState(null)
+    const [error, setError] = useState('')
 
     const handleSubmit = e =>{
         e.preventDefault();
+        if(password.length < 6){
+            setError('password must be 6 or longer!!')
+        }else{
+            setError('')
         console.log(name, email, password)
+        }
     }
 
     const handleNameChange = e =>{
@@ -34,6 +40,9 @@ const StateFullForm = () => {
                 <input onChange={handlePasswordChange}
                 type="password" name="password" id="" required/><br />
                 <input type="submit" value='submit' />
+                {
+                    error && <p>{error}</p>
+                }
             </form>
         </div>
     );
